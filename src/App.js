@@ -8,7 +8,9 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I am React App.</h1>
         <p>I am redendering from App Root.</p>
-        <Person />
+        <Person name="Abhishek" age="24" />
+        <Person name="sumit" age="27">My Hobbies: Racing</Person>
+        <Person name="Yash" age="21"/>
       </div>
     );
 

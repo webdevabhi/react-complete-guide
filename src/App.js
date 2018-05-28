@@ -12,7 +12,7 @@ class App extends Component {
     otherProperty : "Some Other variable"
   }
 
-  switchNameHandler = () => {
+  switchNameHandler = (newName) => {
     // console.log("Button CLicked");
 
     // Don't do this
@@ -20,7 +20,7 @@ class App extends Component {
 
     this.setState({
       persons: [
-        { name: 'Abhishek Patel', age: 24 },
+        { name: newName, age: 24 },
         { name: 'Sumit', age: 27 },
         { name: 'Yash', age: 22 }
       ]
@@ -32,12 +32,23 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I am React App.</h1>
         <p>I am redendering from App Root. {this.state.otherProperty}</p>
-        <button onClick={this.switchNameHandler}>Switch Name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} >
+        <button onClick={() => this.switchNameHandler('Abhishek Patel!')}>Switch Name</button>
+
+        <Person 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age} />
+
+        <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age} 
+          click={this.switchNameHandler.bind(this, 'Abhi!')}>
+          
           <pre>My Hobbies: Racing</pre>
         </Person>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
+
+        <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age} />
       </div>
     );
 

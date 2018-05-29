@@ -14,13 +14,15 @@ class App extends Component {
   }
 
   nameChangedHandler = (event, personIndex)=> {
-    let persons = this.state.persons;
+    let persons = [...this.state.persons];
     persons[personIndex].name = event.target.value;
     this.setState({ persons: persons });
   }
 
   deletePersonHandler = (personIndex) => {
-    let persons = this.state.persons;
+    // let persons = this.state.persons.slice();
+    // ES6 Approach
+    let persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({persons: persons});
   }
@@ -52,21 +54,6 @@ class App extends Component {
                 changed={(e) => this.nameChangedHandler(e, index)} />
             })
           }
-          {/* <Person
-            name={this.state.persons[0].name}
-            age={this.state.persons[0].age} />
-
-          <Person
-            name={this.state.persons[1].name}
-            age={this.state.persons[1].age}
-            >
-
-            <pre>My Hobbies: Racing</pre>
-          </Person>
-
-          <Person
-            name={this.state.persons[2].name}
-            age={this.state.persons[2].age} /> */}
         </div>
       )
     }

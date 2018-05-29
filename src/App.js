@@ -47,7 +47,8 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -69,13 +70,23 @@ class App extends Component {
             })
           }
         </div>
-      )
+      );
+
+      style.backgroundColor = 'red';
+    }
+
+    const classes = [];
+    if (this.state.persons.length <= 2) {
+      classes.push('red');  // classes = ['red']
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push('bold'); // classes = ['red', 'bold']
     }
 
     return (
       <div className="App">
         <h1>Hi, I am React App.</h1>
-        <p>I am redendering from App Root. {this.state.otherProperty}</p>
+        <p className={classes.join(' ')}>I am redendering from App Root. {this.state.otherProperty}</p>
         <button 
           style={style} 
           onClick={this.togglePersonhandler}
@@ -88,7 +99,7 @@ class App extends Component {
     /*
      * Another JS way to render html using pure ReactJs.
      * Its Better to use Jsx, as it is simple and easy to understand.
-     */
+     */  
     // return React.createElement('div', {className:'App'}, React.createElement('h1', null, 'Hi, I am React App.'));
   }
 }

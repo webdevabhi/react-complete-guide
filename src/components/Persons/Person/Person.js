@@ -2,16 +2,30 @@ import React, { Component } from 'react';
 import classes from './Person.css';
 
 class Person extends Component {
-    render() {
-        return (
-            <div className={classes.Person}>
-                <p onClick={this.props.click}>I am {this.props.name} and I am {this.props.age} years old.</p>
-                {this.props.children}
+  constructor(props) {
+    super(props);
+    console.log('[Person.js] Inside Constructor', props);
+  }
 
-                <input type="tex" onChange={this.props.changed} value={this.props.name} />
-            </div>
-        );
-    }
+  componentWillMount() {
+    console.log('[Person.js] Inside componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('[Person.js] Inside componentDidMount');
+  }
+
+  render() {
+    console.log('[Person.js] Inside render');
+    return (
+      <div className={classes.Person}>
+        <p onClick={this.props.click}>I am {this.props.name} and I am {this.props.age} years old.</p>
+        {this.props.children}
+
+        <input type="tex" onChange={this.props.changed} value={this.props.name} />
+      </div>
+    );
+  }
 };
 
 export default Person;

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import classes from './Person.css';
 import withClass from '../../../hoc/withClass';
 import Aux from '../../../hoc/Aux';
@@ -33,6 +35,13 @@ class Person extends Component {
       <input key="3" type="tex" onChange={this.props.changed} value={this.props.name} />
     ] */
   }
+};
+
+Person.propTypes = {
+  click: PropTypes.func,
+  changed: PropTypes.func,
+  name: PropTypes.string,
+  age: PropTypes.number,
 };
 
 export default withClass(Person, classes.Person);

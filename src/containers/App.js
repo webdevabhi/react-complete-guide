@@ -6,7 +6,7 @@ import Cockpit from '../components/Cockpit/Cockpit';
 class App extends PureComponent {
   constructor(props) {
     super(props);
-    console.log('[App.js] Inside Constructor', props);
+    // console.log('[App.js] Inside Constructor', props);
     this.state = {
       persons: [
         { id: 1, name: 'Abhishek', age: 24 },
@@ -19,25 +19,25 @@ class App extends PureComponent {
   }
 
   componentWillMount() {
-    console.log('[App.js] Inside componentWillMount');
+    // console.log('[App.js] Inside componentWillMount');
   }
 
   componentDidMount() {
-    console.log('[App.js] Inside componentDidMount');
+    // console.log('[App.js] Inside componentDidMount');
   }
 
   // shouldComponentUpdate(nextProps, nextState) {
-  //   console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState);
+  //   // console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState);
   //   return nextState.persons !== this.state.persons ||
   //     nextState.showPersons !== this.state.showPersons;
   // }
 
   componentWillUpdate(nextProps, nextState) {
-    console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
+    // console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
   }
 
   componentDidUpdate() {
-    console.log('[UPDATE App.js] Insite componentDitUpdate');
+    // console.log('[UPDATE App.js] Insite componentDitUpdate');
   }
 
   // If contructor are there better to initialise there.
@@ -84,7 +84,7 @@ class App extends PureComponent {
   }
 
   render() {
-    console.log('[App.js] Inside render');
+    // console.log('[App.js] Inside render');
     let persons = null;
 
     if (this.state.showPersons) {

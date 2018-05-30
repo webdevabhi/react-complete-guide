@@ -19,7 +19,7 @@ const cockpit = ( props ) => {
 
     return (
         <div className={classes.Cockpit}>
-            <h1>Hi, I am React App.</h1>
+            <h1>{ props.appTitle }</h1>
             <p className={assignedClasses.join(' ')}>I am redendering from App Root.</p>
             <button
                 className={btnClass}
@@ -27,6 +27,6 @@ const cockpit = ( props ) => {
             >Toggle Person</button>
         </div>
     );
-};
+}
 
 export default cockpit;
